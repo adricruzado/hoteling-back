@@ -38,7 +38,7 @@ describe("Given a generalError middleware", () => {
   });
 
   describe("When it receives a response with an error message 'Error'", () => {
-    describe("Then it should call the response's json method with 'Private error'", () => {
+    test("Then it should call the response's json method with 'Private error'", () => {
       const privateErrorMessage = "Private error";
       const expectedStatusCode = 400;
       const error = new CustomError(privateErrorMessage, expectedStatusCode);
