@@ -4,6 +4,9 @@
   "description": "",
   "type": "module",
   "main": "dist/index.js",
+  "engines": {
+    "node": ">=20.6.0"
+  },
   "scripts": {
     "build:dev": "tsc -w",
     "build": "tsc",
