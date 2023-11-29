@@ -26,9 +26,7 @@ describe("Given a HotelsController's getHotels method", () => {
 
       expect(res.status).toHaveBeenCalledWith(expectedStatusCode);
     });
-  });
 
-  describe("When it receives a response", () => {
     test("Then it should call its json method with the hotels 'Four Seasons Hotel George V' and 'The Ritz-Carlton'", async () => {
       const expectedHotels = hotelsMock;
       const mockResponse: Pick<Response, "status" | "json"> = {
@@ -42,9 +40,9 @@ describe("Given a HotelsController's getHotels method", () => {
         mockResponse as Response,
       );
 
-      expect(mockResponse.json).toHaveBeenCalledWith(
-        expect.objectContaining({ hotels: expectedHotels }),
-      );
+      expect(mockResponse.json).toHaveBeenCalledWith({
+        hotels: expectedHotels,
+      });
     });
   });
 });

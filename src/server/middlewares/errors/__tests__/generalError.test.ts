@@ -49,9 +49,7 @@ describe("Given a generalError middleware", () => {
         error: privateErrorMessage,
       };
 
-      expect(res.json).toHaveBeenCalledWith(
-        expect.objectContaining(errorBodyResponse),
-      );
+      expect(res.json).toHaveBeenCalledWith(errorBodyResponse);
     });
   });
 });

@@ -13,19 +13,15 @@ const port = process.env.PORT ?? 4000;
 const frontUrl = process.env.FRONT_URL!;
 
 app.use(morgan("dev"));
-
 app.use(
   cors({
     origin: [frontUrl, `http://localhost:${port}`],
   }),
 );
-
 app.use(express.json());
 
 app.use("/", pingRouter);
-
 app.use("/hotels", hotelsRouter);
 
 app.use(notFound);
-
 app.use(generalError);
