@@ -28,9 +28,7 @@ describe("Given a PingController's getPong method", () => {
 
       pingController.getPong(req as Request, mockResponse as Response);
 
-      expect(mockResponse.json).toHaveBeenCalledWith(
-        expect.objectContaining(expectedMessage),
-      );
+      expect(mockResponse.json).toHaveBeenCalledWith(expectedMessage);
     });
   });
 });
