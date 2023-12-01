@@ -1,0 +1,53 @@
+{
+  "info": {
+    "_postman_id": "999bb874-dd9b-4558-a89c-f59fb87d9e17",
+    "name": "Hoteling",
+    "description": "Final project.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "30614979"
+  },
+  "item": [
+    {
+      "name": "ping",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://adria-cruzado-202309-bcn-back.onrender.com/",
+          "protocol": "https",
+          "host": ["adria-cruzado-202309-bcn-back", "onrender", "com"],
+          "path": [""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "hotels",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://adria-cruzado-202309-bcn-back.onrender.com/hotels",
+          "protocol": "https",
+          "host": ["adria-cruzado-202309-bcn-back", "onrender", "com"],
+          "path": ["hotels"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "not found",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://adria-cruzado-202309-bcn-back.onrender.com/1",
+          "protocol": "https",
+          "host": ["adria-cruzado-202309-bcn-back", "onrender", "com"],
+          "path": ["1"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
