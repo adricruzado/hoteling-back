@@ -5,7 +5,10 @@ module.exports = {
   setupFilesAfterEnv: ["./src/setupTests.ts"],
   testMatch: ["**/src/**/*.test.ts"],
   resolver: "jest-ts-webcompat-resolver",
-  coveragePathIgnorePatterns: [
-    "src/index.ts, src/server/app.ts, src/database/index.ts",
+  collectCoverageFrom: [
+    "**/src/**/*.ts",
+    "!src/index.ts",
+    "!src/server/app.ts",
+    "!src/database/index.ts",
   ],
 };
