@@ -8,6 +8,10 @@ class HotelsMongooseRepository implements HotelsRepository {
 
     return hotels;
   }
+
+  public async deleteHotel(hotelId: string): Promise<void> {
+    await Hotel.deleteOne({ _id: hotelId });
+  }
 }
 
 export default HotelsMongooseRepository;

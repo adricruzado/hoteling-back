@@ -11,4 +11,6 @@ const hotelsController = new HotelsController(hotelsRepository);
 
 hotelsRouter.get("/", hotelsController.getHotels);
 
+hotelsRouter.delete("/:hotelId", hotelsController.deleteHotel);
+
 export default hotelsRouter;
