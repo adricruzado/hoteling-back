@@ -1,6 +1,6 @@
 import { type NextFunction, type Request, type Response } from "express";
 import { type HotelsRepository } from "../repository/types";
-import CustomError from "../../../server/CustomError/CustomError";
+import CustomError from "../../../server/CustomError/CustomError.js";
 
 class HotelsController {
   constructor(private readonly hotelsRepository: HotelsRepository) {}
