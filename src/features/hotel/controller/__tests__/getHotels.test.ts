@@ -11,6 +11,7 @@ describe("Given a HotelsController's getHotels method", () => {
   const hotelsRepository: HotelsRepository = {
     getHotels: jest.fn().mockReturnValue(hotelsMock),
     deleteHotel: jest.fn(),
+    addHotel: jest.fn(),
   };
   const req = {};
   const res: Pick<Response, "status" | "json"> = {
