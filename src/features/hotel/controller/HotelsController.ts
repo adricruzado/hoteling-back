@@ -1,6 +1,7 @@
 import { type NextFunction, type Request, type Response } from "express";
 import { type HotelsRepository } from "../repository/types";
 import CustomError from "../../../server/CustomError/CustomError.js";
+import { type HotelRequestWithoutId } from "../types";
 
 class HotelsController {
   constructor(private readonly hotelsRepository: HotelsRepository) {}
@@ -28,6 +29,24 @@ class HotelsController {
         500,
       );
       next(error);
+    }
+  };
+
+  addHotel = async (
+    req: HotelRequestWithoutId,
+    res: Response,
+    next: NextFunction,
+  ): Promise<void> => {
+    try {
+      const hotel = req.body;
+
+      const newHotel = await this.hotelsRepository.addHotel(hotel);
+
+      res.status(201).json({ hotel: newHotel });
+    } catch (error) {
+      const customError = new CustomError("Couldn't add hotel", 400);
+
+      next(customError);
     }
   };
 }
