@@ -18,6 +18,7 @@ export const generalError = (
 ) => {
   const statusCode = error.statusCode ?? 500;
   const privateMessage = error.privateMessage ?? error.message;
+
   debug(chalk.red("Error:", privateMessage));
 
   res.status(statusCode).json({ error: error.message });

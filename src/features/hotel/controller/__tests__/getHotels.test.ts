@@ -11,11 +11,12 @@ describe("Given a HotelsController's getHotels method", () => {
   const hotelsRepository: HotelsRepository = {
     getHotels: jest.fn().mockReturnValue(hotelsMock),
     deleteHotel: jest.fn(),
+    addHotel: jest.fn(),
   };
   const req = {};
   const res: Pick<Response, "status" | "json"> = {
     status: jest.fn().mockReturnThis(),
-    json: jest.fn().mockReturnValue(hotelsMock),
+    json: jest.fn(),
   };
 
   describe("When it receives a response", () => {
@@ -32,7 +33,7 @@ describe("Given a HotelsController's getHotels method", () => {
       const expectedHotels = hotelsMock;
       const mockResponse: Pick<Response, "status" | "json"> = {
         status: jest.fn().mockReturnThis(),
-        json: jest.fn().mockReturnValue(expectedHotels),
+        json: jest.fn(),
       };
 
       const hotelsController = new HotelsController(hotelsRepository);
