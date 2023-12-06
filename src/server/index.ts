@@ -9,13 +9,12 @@ import {
 } from "./middlewares/errors/errorMiddlewares.js";
 import hotelsRouter from "../features/hotel/router/hotelsRouter.js";
 
-const port = process.env.PORT ?? 4000;
 const frontUrl = process.env.FRONT_URL!;
 
 app.use(morgan("dev"));
 app.use(
   cors({
-    origin: [frontUrl, `http://localhost:${port}`],
+    origin: [frontUrl],
   }),
 );
 app.use(express.json());
