@@ -11,11 +11,11 @@ describe("Given a generalError middleware", () => {
   const req = {};
   const res: Pick<Response, "status" | "json"> = {
     status: jest.fn().mockReturnThis(),
-    json: jest.fn().mockReturnThis(),
+    json: jest.fn(),
   };
   const next: NextFunction = jest.fn();
 
-  describe("When it receives a response's status method with 400", () => {
+  describe("When it receives a response and an error with status code 400", () => {
     test("Then it should call the response's status method with 400", () => {
       const expectedStatusCode = 400;
       const error = new CustomError(errorMessage, expectedStatusCode);
