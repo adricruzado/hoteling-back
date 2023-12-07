@@ -16,8 +16,8 @@ describe("Given a HotelsController's deleteHotel method", () => {
   };
   const next: NextFunction = jest.fn();
 
-  describe("When it receives a response with status 200", () => {
-    test("Then it should call its status method with 200", async () => {
+  describe("When it receives a request with a valid id '656492010f2c29b15944b0d8' and a response", () => {
+    test("Then it should call the response's status method with 200", async () => {
       const expectedStatusCode = 200;
       const req: Pick<Request, "params"> = {
         params: { _id: "656492010f2c29b15944b0d8" },
@@ -26,28 +26,27 @@ describe("Given a HotelsController's deleteHotel method", () => {
         status: jest.fn().mockReturnThis(),
         json: jest.fn(),
       };
-
       const hotelsController = new HotelsController(hotelsRepository);
+
       await hotelsController.deleteHotel(req as Request, res as Response, next);
 
       expect(res.status).toHaveBeenCalledWith(expectedStatusCode);
     });
   });
 
-  describe("When it receives a response with status 500", () => {
-    test("Then it should call its status method with 500 and its json method with 'An error occurred while deleting the hotel.'", async () => {
+  describe("When it receives an invalid request and a response", () => {
+    test("Then it should call its next function with a custom error 'An error occurred while deleting the hotel.'", async () => {
       const expectedError: Pick<CustomError, "message" | "statusCode"> = {
         message: "An error occurred while deleting the hotel.",
         statusCode: 500,
       };
-
       const req = {};
       const res: Pick<Response, "status" | "json"> = {
         status: jest.fn().mockReturnThis(),
         json: jest.fn(),
       };
-
       const hotelsController = new HotelsController(hotelsRepository);
+
       await hotelsController.deleteHotel(req as Request, res as Response, next);
 
       expect(next).toHaveBeenCalledWith(expect.objectContaining(expectedError));
