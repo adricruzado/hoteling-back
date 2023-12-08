@@ -22,6 +22,7 @@ describe("Given an HotelsController addHotel method", () => {
       getHotels: jest.fn(),
       deleteHotel: jest.fn(),
       addHotel: jest.fn().mockResolvedValue({ hotelMock }),
+      getHotelById: jest.fn(),
     };
     const next: NextFunction = jest.fn();
 
@@ -56,6 +57,7 @@ describe("Given an HotelsController addHotel method", () => {
         getHotels: jest.fn(),
         deleteHotel: jest.fn(),
         addHotel: jest.fn().mockRejectedValue(undefined),
+        getHotelById: jest.fn(),
       };
       const expectedErrorMessage = "Couldn't add hotel";
       const expectedStatusCode = 400;

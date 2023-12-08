@@ -13,6 +13,7 @@ describe("Given a HotelsController's deleteHotel method", () => {
     getHotels: jest.fn().mockReturnValue(hotelsMock),
     deleteHotel: jest.fn(),
     addHotel: jest.fn(),
+    getHotelById: jest.fn(),
   };
   const next: NextFunction = jest.fn();
 
