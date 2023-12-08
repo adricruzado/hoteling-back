@@ -28,3 +28,5 @@ export type HotelRequestWithoutId = Request<
   Record<string, unknown>,
   HotelStructureWithoutId
 >;
+
+export type HotelRequestById = Request<{ hotelId: string }>;
