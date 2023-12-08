@@ -49,6 +49,24 @@ class HotelsController {
       next(customError);
     }
   };
+
+  getHotelById = async (
+    req: Request<{ hotelId: string }>,
+    res: Response,
+    next: NextFunction,
+  ): Promise<void> => {
+    try {
+      const { hotelId } = req.params;
+
+      const hotel = await this.hotelsRepository.getHotelById(hotelId);
+
+      res.status(200).json({ hotel });
+    } catch {
+      const customError = new CustomError("Couldn't find the hotel.", 400);
+
+      next(customError);
+    }
+  };
 }
 
 export default HotelsController;
