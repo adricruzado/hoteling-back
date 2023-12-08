@@ -16,4 +16,6 @@ hotelsRouter.delete("/:hotelId", hotelsController.deleteHotel);
 
 hotelsRouter.post("/create", hotelValidation, hotelsController.addHotel);
 
+hotelsRouter.get("/:hotelId", hotelsController.getHotelById);
+
 export default hotelsRouter;
