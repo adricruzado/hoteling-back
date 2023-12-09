@@ -62,6 +62,43 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n        \"name\": \"Four Seasons Hotel George V\",\n        \"country\": \"France\",\n        \"city\": \"Paris\",\n        \"rating\": 9.5,\n        \"price\": 800,\n        \"isFavourite\": false,\n        \"picture\": \"https://i.ibb.co/Rg1NpjF/four-seasons-final.webp\",\n        \"description\": \"The Four Seasons Hotel George V, located in Paris, is known for its elegance and luxury. With a prime location just steps from the Champs-Élysées, it offers exquisitely decorated rooms and suites, exceptional service, and award-winning restaurants.\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://adria-cruzado-202309-bcn-back.onrender.com/hotels/create",
+          "protocol": "https",
+          "host": ["adria-cruzado-202309-bcn-back", "onrender", "com"],
+          "path": ["hotels", "create"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "hotel by id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://adria-cruzado-202309-bcn-back.onrender.com/hotels/656492010f2c29b15944b0d8",
+          "protocol": "https",
+          "host": ["adria-cruzado-202309-bcn-back", "onrender", "com"],
+          "path": ["hotels", "656492010f2c29b15944b0d8"]
+        }
+      },
+      "response": []
     }
   ]
 }
