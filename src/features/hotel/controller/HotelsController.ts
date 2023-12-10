@@ -1,7 +1,7 @@
 import { type NextFunction, type Request, type Response } from "express";
 import { type HotelsRepository } from "../repository/types";
 import CustomError from "../../../server/CustomError/CustomError.js";
-import { type HotelRequestWithoutId } from "../types";
+import { type HotelRequestWithId, type HotelRequestWithoutId } from "../types";
 
 class HotelsController {
   constructor(private readonly hotelsRepository: HotelsRepository) {}
@@ -63,6 +63,28 @@ class HotelsController {
       res.status(200).json({ hotel });
     } catch {
       const customError = new CustomError("Couldn't find the hotel.", 400);
+
+      next(customError);
+    }
+  };
+
+  modifyHotel = async (
+    req: HotelRequestWithId,
+    res: Response,
+    next: NextFunction,
+  ): Promise<void> => {
+    try {
+      const hotel = req.body;
+      const { hotelId } = req.params;
+
+      const modifiedHotel = await this.hotelsRepository.modifyHotel(
+        hotelId,
+        hotel,
+      );
+
+      res.status(200).json({ hotel: modifiedHotel });
+    } catch (error) {
+      const customError = new CustomError("Couldn't modify the hotel.", 400);
 
       next(customError);
     }
