@@ -13,6 +13,7 @@ describe("Given a HotelsController's getHotels method", () => {
     deleteHotel: jest.fn(),
     addHotel: jest.fn(),
     getHotelById: jest.fn(),
+    modifyHotel: jest.fn(),
   };
   const req = {};
   const res: Pick<Response, "status" | "json"> = {
