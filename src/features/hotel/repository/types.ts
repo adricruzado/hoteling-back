@@ -5,4 +5,8 @@ export interface HotelsRepository {
   deleteHotel: (hotelId: string) => Promise<void>;
   addHotel: (hotel: HotelStructureWithoutId) => Promise<HotelStructure>;
   getHotelById: (id: string) => Promise<HotelStructure>;
+  modifyHotel: (
+    id: string,
+    hotel: HotelStructure,
+  ) => Promise<HotelStructure | undefined>;
 }

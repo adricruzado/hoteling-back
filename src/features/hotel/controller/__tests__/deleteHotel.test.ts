@@ -14,6 +14,7 @@ describe("Given a HotelsController's deleteHotel method", () => {
     deleteHotel: jest.fn(),
     addHotel: jest.fn(),
     getHotelById: jest.fn(),
+    modifyHotel: jest.fn(),
   };
   const next: NextFunction = jest.fn();
 

@@ -34,6 +34,23 @@ class HotelsMongooseRepository implements HotelsRepository {
       throw new Error("Error finding hotel" + (error as Error).message);
     }
   }
+
+  public async modifyHotel(
+    id: string,
+    hotel: HotelStructure,
+  ): Promise<HotelStructure | undefined> {
+    try {
+      const modifiedHotel = await Hotel.findByIdAndUpdate(
+        id,
+        { ...hotel },
+        { returnDocument: "after" },
+      );
+
+      return modifiedHotel!;
+    } catch (error) {
+      throw new Error("Error modifying hotel" + (error as Error).message);
+    }
+  }
 }
 
 export default HotelsMongooseRepository;
