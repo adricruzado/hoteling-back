@@ -18,4 +18,6 @@ hotelsRouter.post("/create", hotelValidation, hotelsController.addHotel);
 
 hotelsRouter.get("/:hotelId", hotelsController.getHotelById);
 
+hotelsRouter.patch("/:hotelId", hotelsController.modifyHotel);
+
 export default hotelsRouter;
