@@ -4,7 +4,7 @@ import { type HotelsRepository } from "./types";
 
 class HotelsMongooseRepository implements HotelsRepository {
   public async getHotels(): Promise<HotelStructure[]> {
-    const hotels = await Hotel.find().limit(10);
+    const hotels = await Hotel.find().limit(10).sort({ _id: -1 });
 
     return hotels;
   }
