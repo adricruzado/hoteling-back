@@ -18,8 +18,13 @@ describe("Given a GET /hotels endpoint", () => {
 
       const responseBody = response.body as { hotels: HotelStructure[] };
 
+      const invertHotelsMock = hotelsMock.reverse();
+
       responseBody.hotels.forEach((hotel, hotelPosition) => {
-        expect(hotel).toHaveProperty("name", hotelsMock[hotelPosition].name);
+        expect(hotel).toHaveProperty(
+          "name",
+          invertHotelsMock[hotelPosition].name,
+        );
       });
     });
   });
