@@ -99,6 +99,29 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "modify hotel",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n        \"isFavourite\": false\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://adria-cruzado-202309-bcn-back.onrender.com/hotels/6576fb21d7b2d56e216ce3f7",
+          "protocol": "https",
+          "host": ["adria-cruzado-202309-bcn-back", "onrender", "com"],
+          "path": ["hotels", "6576fb21d7b2d56e216ce3f7"]
+        }
+      },
+      "response": []
     }
   ]
 }
