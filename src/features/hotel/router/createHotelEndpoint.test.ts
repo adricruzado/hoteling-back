@@ -23,7 +23,7 @@ describe("Given a POST /hotels/create endpoint", () => {
     });
   });
 
-  describe("When it receives a request with an invalid hotel", () => {
+  describe("When it receives a request with a 'Four Seasons Hotel George V' hotel and there is an error", () => {
     test("Then it should respond with status 400 and an error message", async () => {
       await server.stop();
 
